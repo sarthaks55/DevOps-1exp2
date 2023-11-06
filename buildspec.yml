@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "No pre-build steps required."
+
+  build:
+    commands:
+      - echo "Building static website"
+      - aws s3 sync . s3://htmlbuildbucket1
+
+artifacts:
+  files: 
+    - '**/*'
+
+cache:
+  paths: []
+
