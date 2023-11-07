@@ -16,3 +16,16 @@ resource "aws_instance" "example_instance" {
     Name = "ExampleInstance"
   }
 }
+
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::exp2s3bucketbuild/*"
+        }
+    ]
+}
